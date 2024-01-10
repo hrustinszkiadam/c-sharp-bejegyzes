@@ -52,11 +52,7 @@ internal class Program
         masodik.Tartalom = ujTartalom;
 
         Console.WriteLine("\nBejegyzések:");
-        foreach (Bejegyzes bejegyzes in bejegyzesek)
-        {
-            Console.WriteLine(bejegyzes);
-            Console.WriteLine();
-        }
+        BejegyzesekKiir(bejegyzesek);
 
         Bejegyzes legnepszerubb = bejegyzesek.OrderByDescending(x => x.Likeok).First();
         Console.WriteLine($"A legnépszerűbb bejegyzés:\n{legnepszerubb}");
@@ -70,6 +66,18 @@ internal class Program
         int likeKevesebb15 = bejegyzesek.Count(x => x.Likeok < 15);
         Console.WriteLine($"\n{likeKevesebb15} db bejegyzésnek van kevesebb mint 15 likeja");
 
+        Console.WriteLine("\nBejegyzések Likeok szerint csökkenő sorrendben:");
+        BejegyzesekKiir([.. bejegyzesek.OrderByDescending(x => x.Likeok)]);
+
         Console.ReadKey();
+    }
+
+    static void BejegyzesekKiir(List<Bejegyzes> bejegyzesek)
+    {
+        foreach (Bejegyzes bejegyzes in bejegyzesek)
+        {
+            Console.WriteLine(bejegyzes);
+            Console.WriteLine();
+        }
     }
 }
