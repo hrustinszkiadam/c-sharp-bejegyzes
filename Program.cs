@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace bejegyzes;
 
@@ -67,7 +68,9 @@ internal class Program
         Console.WriteLine($"\n{likeKevesebb15} db bejegyzésnek van kevesebb mint 15 likeja");
 
         Console.WriteLine("\nBejegyzések Likeok szerint csökkenő sorrendben:");
-        BejegyzesekKiir([.. bejegyzesek.OrderByDescending(x => x.Likeok)]);
+        List<Bejegyzes> rendezettBejegyzesek = [.. bejegyzesek.OrderByDescending(x => x.Likeok)];
+        BejegyzesekKiir(rendezettBejegyzesek);
+        File.WriteAllLines("bejegyzesek_rendezett.txt", rendezettBejegyzesek.Select(x => $"{x.Szerzo};{x.Tartalom};{x.Likeok}"));
 
         Console.ReadKey();
     }

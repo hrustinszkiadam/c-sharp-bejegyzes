@@ -1,0 +1,3 @@
+Második bejegyzés;2. bej módosítás;60
+Első bejegyzés;Ez az első bejegyzés szövege;0
+Adam;új bejegyzés;0
