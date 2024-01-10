@@ -61,6 +61,12 @@ internal class Program
         Bejegyzes legnepszerubb = bejegyzesek.OrderByDescending(x => x.Likeok).First();
         Console.WriteLine($"A legnépszerűbb bejegyzés:\n{legnepszerubb}");
 
+        bool vanE = bejegyzesek.Any(x => x.Likeok >= 35);
+        if(vanE)
+            Console.WriteLine("\nVan olyan bejegyzés aminek a likejainak száma 35 legalább");
+        else
+            Console.WriteLine("\nNincs olyan bejegyzés aminek a likejainak száma 35 legalább");
+
         Console.ReadKey();
     }
 }
