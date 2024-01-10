@@ -10,7 +10,10 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        List<Bejegyzes> bejegyzesek = [
+            new Bejegyzes("Első bejegyzés", "Ez az első bejegyzés szövege"),
+            new Bejegyzes("Második bejegyzés", "Ez a második bejegyzés szövege")
+        ];
         Console.ReadKey();
     }
 }
