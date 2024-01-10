@@ -41,6 +41,13 @@ internal class Program
             randomBejegyzes.Like();
         }
 
+        Console.WriteLine("Bejegyzések:");
+        foreach (Bejegyzes bejegyzes in bejegyzesek)
+        {
+            Console.WriteLine(bejegyzes);
+            Console.WriteLine();
+        }
+
         Bejegyzes legnepszerubb = bejegyzesek.OrderByDescending(x => x.Likeok).First();
         Console.WriteLine($"A legnépszerűbb bejegyzés:\n{legnepszerubb}");
 
