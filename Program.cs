@@ -34,6 +34,13 @@ internal class Program
             }
             bejegyzesek.Add(new Bejegyzes(szerzo, tartalom));
         }
+
+        Bejegyzes randomBejegyzes = bejegyzesek[new Random().Next(0, bejegyzesek.Count)];
+        for(int i = 0; i < bejegyzesek.Count*20; i++)
+        {
+            randomBejegyzes.Like();
+        }
+        
         Console.ReadKey();
     }
 }
