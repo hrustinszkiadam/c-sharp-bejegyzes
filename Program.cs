@@ -40,7 +40,10 @@ internal class Program
         {
             randomBejegyzes.Like();
         }
-        
+
+        Bejegyzes legnepszerubb = bejegyzesek.OrderByDescending(x => x.Likeok).First();
+        Console.WriteLine($"A legnépszerűbb bejegyzés:\n{legnepszerubb}");
+
         Console.ReadKey();
     }
 }
