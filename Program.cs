@@ -56,7 +56,7 @@ internal class Program
             ujTartalom = Console.ReadLine() ?? "";
         }
 
-        Console.WriteLine("Bejegyzések:");
+        Console.WriteLine("\nBejegyzések:");
         foreach (Bejegyzes bejegyzes in bejegyzesek)
         {
             Console.WriteLine(bejegyzes);
