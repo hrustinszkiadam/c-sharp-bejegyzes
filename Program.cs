@@ -67,6 +67,9 @@ internal class Program
         else
             Console.WriteLine("\nNincs olyan bejegyzés aminek a likejainak száma 35 legalább");
 
+        int likeKevesebb15 = bejegyzesek.Count(x => x.Likeok < 15);
+        Console.WriteLine($"\n{likeKevesebb15} db bejegyzésnek van kevesebb mint 15 likeja");
+
         Console.ReadKey();
     }
 }
