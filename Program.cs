@@ -43,18 +43,13 @@ internal class Program
 
         Console.WriteLine("Módosítsd a második bejegyzést:");
         Bejegyzes masodik = bejegyzesek[1];
-        string ujSzerzo = "";
         string ujTartalom = "";
-        while (ujSzerzo == "")
-        {
-            Console.Write("Szerző: ");
-            ujSzerzo = Console.ReadLine() ?? "";
-        }
         while (ujTartalom == "")
         {
             Console.Write("Tartalom: ");
             ujTartalom = Console.ReadLine() ?? "";
         }
+        masodik.Tartalom = ujTartalom;
 
         Console.WriteLine("\nBejegyzések:");
         foreach (Bejegyzes bejegyzes in bejegyzesek)

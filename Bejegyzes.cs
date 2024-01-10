@@ -14,7 +14,7 @@ class Bejegyzes
       this.tartalom = tartalom;
       this.likeok = 0;
       this.letrejott = DateTime.Now;
-      this.szerkesztve = DateTime.Now;
+      this.szerkesztve = letrejott;
    }
 
    public string Szerzo { get => szerzo; }
@@ -30,8 +30,8 @@ class Bejegyzes
 
    override public string ToString()
    {
-      bool marSzerkesztve = this.szerkesztve != this.letrejott;
-      string szerkesztettText = marSzerkesztve ? $"(szerkesztve: {this.szerkesztve})" : "";
+      bool marSzerkesztve = DateTime.Compare(this.szerkesztve, this.letrejott) != 0;
+      string szerkesztettText = marSzerkesztve ? $"\n(szerkesztve: {this.szerkesztve})" : "";
 
       return $"{this.szerzo} - {this.likeok} - {this.letrejott}{szerkesztettText}\n{this.tartalom}";
    }
